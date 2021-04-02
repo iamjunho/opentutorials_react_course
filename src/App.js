@@ -40,7 +40,13 @@ class App extends Component {
           }.bind(this)}
         ></Subject>
         <Subject title="React" sub="for UI"></Subject>
-        <TOC data={this.state.contents}></TOC>
+        <TOC
+          onChangePage={function () {
+            alert('TOC changed!');
+            this.setState({ mode: 'read' });
+          }.bind(this)}
+          data={this.state.contents}
+        ></TOC>
         <Content title={_title} desc={_desc}></Content>
       </div>
     );
